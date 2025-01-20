@@ -23,6 +23,11 @@ ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
 rm -rf $HOME/.vimrc
 ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
 
+# Removes tmux configuration (if it exists) and symlinks .tmux.conf and .tmux folder from the .dotfiles
+rm -rf $HOME/.tmux.conf $HOME/.tmux
+ln -s $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -s $HOME/.dotfiles/.tmux $HOME/.tmux
+
 # Update Homebrew recipes
 brew update
 
