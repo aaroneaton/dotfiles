@@ -36,5 +36,8 @@ mkdir $HOME/Projects
 # Symlink the Mackup config file to the home directory
 ln -s ./.mackup.cfg $HOME/.mackup.cfg
 
+# Add the global .gitignore
+git config --global core.excludesfile ~/.dotfiles/.gitignore_global
+
 # Set macOS preferences - we will run this last because this will reload the shell
 source ./.macos
