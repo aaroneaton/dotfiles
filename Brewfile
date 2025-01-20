@@ -19,6 +19,7 @@ brew 'the_silver_searcher' # A faster and easier alternative to grep
 brew 'tmux'
 brew 'trash'
 brew 'tree'
+brew 'vips'
 
 # Development
 brew 'yarn'
