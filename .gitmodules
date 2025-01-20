@@ -13,3 +13,6 @@
 [submodule ".tmux/plugins/tmux-continuum"]
 	path = .tmux/plugins/tmux-continuum
 	url = git@github.com:tmux-plugins/tmux-continuum.git
+[submodule ".tmux/plugins/tmux-mighty-scroll"]
+	path = .tmux/plugins/tmux-mighty-scroll
+	url = git@github.com:noscript/tmux-mighty-scroll.git
