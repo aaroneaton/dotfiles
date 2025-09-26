@@ -17,6 +17,7 @@ brew 'tmux'
 brew 'trash'
 brew 'tree'
 brew 'vips'
+brew '1password-cli'
 
 # Development
 brew 'yarn'
