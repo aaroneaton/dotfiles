@@ -38,6 +38,10 @@ brew bundle --file ./Brewfile
 # Create a projects directories
 mkdir $HOME/Projects
 
+# Create the swap and backup directories for vim
+mkdir $HOME/.vim/backups
+mkdir $HOME/.vim/swaps
+
 # Symlink the Mackup config file to the home directory
 ln -s ./.mackup.cfg $HOME/.mackup.cfg
 
