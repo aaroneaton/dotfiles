@@ -1,7 +1,6 @@
 #!/bin/sh
 
-echo "Setting up your Raspberry Pi..."
-
+echo "====> Setting up your Raspberry Pi..."
 
 # Removes .vimrc from $HOME (if it exists) and symlinks the .vimrc file from the .dotfiles
 rm -rf $HOME/.vimrc
@@ -16,9 +15,11 @@ ln -s $HOME/.dotfiles/.tmux $HOME/.tmux
 sudo apt update
 
 # Install applications
-sudo apt install tmux
-
-sudo apt-get install -y silversearcher-ag zsh fonts-powerline build-essential
+sudo apt-get install -y silversearcher-ag \
+  zsh \
+  tmux \
+  fonts-powerline \
+  build-essential
 
 # Change default shell to ZSH
 chsh -s $(which zsh)
@@ -30,11 +31,19 @@ fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
-ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # Create the swap and backup directories for vim
-mkdir $HOME/.vim/backups
-mkdir $HOME/.vim/swaps
+mkdir -p $HOME/.vim/backups
+mkdir -p $HOME/.vim/swaps
 
 # Add the global .gitignore
 git config --global core.excludesfile ~/.dotfiles/.gitignore_global
+
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh
+sudo usermod -aG docker $USER
+rm get-docker.sh
+
+echo "====> All done! Make sure to log out and back in before proceeding."
